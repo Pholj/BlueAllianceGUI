@@ -26,11 +26,18 @@ def load_all_data(api_key, event_key):
         "team_keys": team_keys,
         "OPRS": OPRS,
         "rankings": rankings,
-        
+
     }
     save_to_json(data, event_key)
     return data
 
+
+def data_exists(event_key):
+    path = Path(f"data/{event_key}.json")
+    return path.exists()
+
+
+#Always use this, it checks if exist, else loads it.
 def fetch_data(api_key, event_key):
     path = Path(f"data/{event_key}.json")
     if path.exists():
@@ -39,10 +46,12 @@ def fetch_data(api_key, event_key):
     else:
         return load_all_data(api_key, event_key)
 
+
 def save_to_json(data, event_key):
     Path("data").mkdir(exist_ok=True)
     with open(f"data/{event_key}.json", "w") as f:
         json.dump(data, f, indent=2)
+
 
 def reload_data(api_key, event_key):
     load_all_data(api_key, event_key)

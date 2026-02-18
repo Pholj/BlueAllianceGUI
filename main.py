@@ -1,10 +1,13 @@
 from load_data import load_all_data, save_to_json
+from ui import FRCGUI
+
 
 def main():
-    #Get event name and store that event
     API_KEY = ""
-    event = "2025mosl"
-    print("hi")
-    print(load_all_data(API_KEY, event))
+    #last years event key: 2025mosl
+
+    #Runs the GUI
+    root = FRCGUI(API_KEY)
+    root.mainloop()
 
 main()
