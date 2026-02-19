@@ -3,11 +3,12 @@ from ui import FRCGUI
 
 
 def main():
+    #PUT IN YOUR API KEY HERE
     API_KEY = ""
-    #last years event key: 2025mosl
 
     #Runs the GUI
     root = FRCGUI(API_KEY)
     root.mainloop()
 
-main()
+if __name__ == "__main__":
+    main()
