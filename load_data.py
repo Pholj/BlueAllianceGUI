@@ -52,6 +52,5 @@ def save_to_json(data, event_key):
     with open(f"data/{event_key}.json", "w") as f:
         json.dump(data, f, indent=2)
 
-
 def reload_data(api_key, event_key):
     load_all_data(api_key, event_key)
