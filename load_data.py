@@ -16,6 +16,7 @@ def load_data(api_key, endpoint):
         response.raise_for_status()
 
 
+#doesn't actually load all data, add stuff you need here.
 def load_all_data(api_key, event_key):
     #Gets a list of Team keys that competed in the given event.
     team_keys = load_data(api_key, f"/event/{event_key}/teams")
